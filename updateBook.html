@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Book – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="dashboard.html?role=admin">Dashboard</a>
+  <a href="addBook.html?role=admin">Add Book</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>Update Book</h2>
+
+  <!-- REQ: Book/Movie radio, default Book -->
+  <label><input type="radio" name="type" value="Book" checked> Book</label>
+  <label><input type="radio" name="type" value="Movie"> Movie</label>
+
+  <hr class="divider">
+
+  <!-- REQ: All fields mandatory, error shown inline -->
+  <input id="ubookName" placeholder="Existing Book Name *" type="text">
+  <input id="uauthor" placeholder="New Author Name *" type="text">
+
+  <div id="msg"></div>
+
+  <button onclick="updateBook()">Update Book</button>
+</div>
+
+</body>
+</html>
