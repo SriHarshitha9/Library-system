@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fine Pay – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="javascript:history.back()">← Back</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>Fine Pay</h2>
+
+  <!-- REQ: All fields populated (read-only display) -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Book Name</label>
+  <input id="fBookName" readonly>
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Author</label>
+  <input id="fAuthor" readonly>
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Serial Number</label>
+  <input id="fSerial" readonly>
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Issue Date</label>
+  <input type="date" id="fIssueDate" readonly>
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Return Date</label>
+  <input type="date" id="fReturnDate" readonly>
+
+  <hr class="divider">
+
+  <!-- REQ: Fine amount displayed -->
+  <div class="fine-box" id="fineAmount">Fine: ₹0</div>
+
+  <!-- REQ 6 + Fine Pay req: Checkbox = Fine Paid. Only shown when fine > 0 -->
+  <!-- REQ: Must be checked before completing if fine exists -->
+  <div id="finePaidSection" style="display:none;margin:12px 0;">
+    <label style="font-size:15px;font-weight:600;color:#c0392b;">
+      <!-- REQ 6: Checkbox — checked = yes, unchecked = no -->
+      <input type="checkbox" id="finePaid" style="width:auto;margin-right:8px;">
+      Fine Paid (required to complete return)
+    </label>
+  </div>
+
+  <!-- REQ: Remarks field on Fine Pay -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Remarks (optional)</label>
+  <textarea id="fRemarks" placeholder="Any remarks..." rows="3" style="resize:vertical"></textarea>
+
+  <div id="msg"></div>
+
+  <button onclick="payFine()">Confirm & Complete Return</button>
+</div>
+
+<script>
+  loadFine();
+</script>
+
+</body>
+</html>
