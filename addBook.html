@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <title>Add Book – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="dashboard.html?role=admin">Dashboard</a>
+  <a href="updateBook.html?role=admin">Update Book</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
 <div class="container">
-<h2>Add Book</h2>
+  <h2>Add Book</h2>
 
-<label><input type="radio" name="type" checked> Book</label>
-<label><input type="radio" name="type"> Movie</label>
+  <!-- REQ: One of movie/book selected. Default = Book (REQ 5: only one radio selectable) -->
+  <label><input type="radio" name="type" value="Book" checked> Book</label>
+  <label><input type="radio" name="type" value="Movie"> Movie</label>
 
-<input type="text" id="bookName" placeholder="Book Name">
-<input type="text" id="author" placeholder="Author">
+  <hr class="divider">
 
-<div id="error" class="error"></div>
+  <!-- REQ: All fields mandatory -->
+  <input id="bookName" placeholder="Book Name *" type="text">
+  <input id="author" placeholder="Author Name *" type="text">
 
-<button onclick="addBook()">Submit</button>
+  <div id="msg"></div>
+
+  <button onclick="addBook()">Add Book</button>
 </div>
 
 </body>
