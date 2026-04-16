@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Membership – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="dashboard.html?role=admin">Dashboard</a>
+  <a href="addMembership.html?role=admin">Add Membership</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>Update Membership</h2>
+
+  <!-- REQ: Membership ID mandatory; other fields populate on lookup -->
+  <input id="mid" placeholder="Membership ID *" type="text">
+  <button onclick="lookupMember()" style="width:auto;padding:9px 20px;margin-bottom:12px">Lookup</button>
+
+  <hr class="divider">
+
+  <!-- Auto-populated fields (read-only) -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Name</label>
+  <input id="umname" readonly placeholder="Auto-filled after lookup">
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Email</label>
+  <input id="umemail" readonly placeholder="Auto-filled after lookup">
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Phone</label>
+  <input id="umphone" readonly placeholder="Auto-filled after lookup">
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Current Expiry</label>
+  <input id="umexpiry" type="date" readonly placeholder="Auto-filled after lookup">
+
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">Status</label>
+  <input id="umstatus" readonly placeholder="Auto-filled after lookup">
+
+  <hr class="divider">
+
+  <!-- REQ: Default = Extend 6 months. REQ 5: only one selectable -->
+  <p style="font-size:14px;color:#555;margin:6px 0">Action *</p>
+  <label><input type="radio" name="ext" value="extend" checked> Extend by 6 Months</label>
+  <label><input type="radio" name="ext" value="cancel"> Cancel Membership</label>
+
+  <div id="msg"></div>
+
+  <button onclick="updateMember()">Update Membership</button>
+</div>
+
+</body>
+</html>
