@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Membership – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="dashboard.html?role=admin">Dashboard</a>
+  <a href="updateMembership.html?role=admin">Update Membership</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>Add Membership</h2>
+
+  <!-- REQ: All fields mandatory -->
+  <input id="mname" placeholder="Full Name *" type="text">
+  <input id="email" placeholder="Email *" type="email">
+  <input id="phone" placeholder="Phone Number *" type="text" maxlength="10">
+
+  <hr class="divider">
+
+  <!-- REQ: Select one duration. Default = 6 months. value attributes fixed. -->
+  <p style="font-size:14px;color:#555;margin:6px 0">Membership Duration *</p>
+  <!-- REQ 5: Only one radio selectable at a time -->
+  <label><input type="radio" name="dur" value="6months" checked> 6 Months</label>
+  <label><input type="radio" name="dur" value="1year"> 1 Year</label>
+  <label><input type="radio" name="dur" value="2years"> 2 Years</label>
+
+  <div id="msg"></div>
+
+  <button onclick="addMember()">Add Membership</button>
+</div>
+
+</body>
+</html>
