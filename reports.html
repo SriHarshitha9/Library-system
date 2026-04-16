@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reports – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav" id="navBar">
+  <a href="javascript:history.back()">← Back</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>Available Books</h2>
+
+  <!-- REQ: At least one field filled before submitting (search) -->
+  <input type="text" id="searchInput" placeholder="Search by book name or author...">
+  <button onclick="loadReports()" style="width:auto;padding:9px 20px;margin-bottom:12px">Search</button>
+
+  <hr class="divider">
+
+  <!-- REQ: Radio button in last column per row -->
+  <table id="reportTable" border="1"></table>
+
+  <div id="msg"></div>
+
+  <!-- REQ: Error shown on same page if nothing selected -->
+  <button onclick="selectBook()">Issue Selected Book</button>
+</div>
+
+<script>
+  // Auto-load on page open
+  loadReports();
+  // Set back link with role
+  let role = new URLSearchParams(window.location.search).get("role") || "user";
+  document.querySelector('.nav a').href = "dashboard.html?role=" + role;
+</script>
+
+</body>
+</html>
