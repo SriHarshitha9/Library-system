@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Management – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="dashboard.html?role=admin">Dashboard</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
+
+<div class="container">
+  <h2>User Management</h2>
+
+  <!-- REQ: Default = New User. REQ 5: Only one radio selectable -->
+  <p style="font-size:14px;color:#555;margin:6px 0">User Type *</p>
+  <label><input type="radio" name="userType" value="new" checked> New User</label>
+  <label><input type="radio" name="userType" value="existing"> Existing User</label>
+
+  <hr class="divider">
+
+  <!-- REQ: Name is mandatory -->
+  <input id="uname" placeholder="User Name *" type="text">
+
+  <div id="msg"></div>
+
+  <button onclick="manageUser()">Submit</button>
+</div>
+
+</body>
+</html>
