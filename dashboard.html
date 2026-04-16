@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <title>Dashboard – LMS</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .nav {
+      background: #2c3e50;
+      padding: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      background: #34495e;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .nav a:hover {
+      background: #1abc9c;
+    }
+
+    .group-label {
+      color: #f1c40f;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+  </style>
+
+  <script src="script.js"></script>
 </head>
+
 <body>
 
-<div class="nav">
-<a href="maintenance.html" id="maintenanceLink">Maintenance</a>
-<a href="transactions.html">Transactions</a>
-<a href="reports.html">Reports</a>
+<div class="nav" id="mainNav">
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
 </div>
+
+<div class="container">
+  <h2>Dashboard</h2>
+  <p id="welcomeMsg" style="text-align:center;color:#555;margin-bottom:16px"></p>
+  <p style="text-align:center;color:#888;font-size:14px">
+    Use the navigation above to access modules.
+  </p>
+
+  <button onclick="logout()" style="background:#c0392b;margin-top:20px">Logout</button>
+</div>
+
+<script>
+(function() {
+  let role = new URLSearchParams(window.location.search).get("role") || localStorage.getItem("role");
+  let nav = document.getElementById("mainNav");
+  let welcome = document.getElementById("welcomeMsg");
+
+  welcome.innerText = "Welcome, " + (role === "admin" ? "Admin" : "User");
+
+  let html = "";
+
+  // ===== COMMON MODULES =====
+  html += `<span class="group-label">Modules:</span>`;
+  html += `<a href="reports.html?role=${role}">Reports</a>`;
+  html += `<a href="issueBook.html?role=${role}">Issue Book</a>`;
+  html += `<a href="returnBook.html?role=${role}">Return Book</a>`;
+
+  // ===== ADMIN SECTION =====
+  if (role === "admin") {
+    html += `<span class="group-label">Admin:</span>`;
+    html += `<a href="addBook.html?role=admin">Add Book</a>`;
+    html += `<a href="updateBook.html?role=admin">Update Book</a>`;
+    html += `<a href="addMembership.html?role=admin">Add Membership</a>`;
+    html += `<a href="updateMembership.html?role=admin">Update Membership</a>`;
+    html += `<a href="userManagement.html?role=admin">User Management</a>`;
+  }
+
+  nav.insertAdjacentHTML("afterbegin", html);
+})();
+</script>
 
 </body>
 </html>
