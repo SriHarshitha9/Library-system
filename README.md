@@ -34,7 +34,7 @@ The main objective of this project is to digitize basic library operations and p
 - Auto-fetch issue details
 - Return process handling
 
-### 💰 Fine Calculation
+###  Fine Calculation
 - Fine calculated based on delay in return
 - ₹10 per day late fee logic
 
