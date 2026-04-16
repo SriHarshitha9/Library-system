@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    background: #eef2f7;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav {
+    background: #333;
+    padding: 10px;
+}
+
+.nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.error {
+    color: red;
+}
