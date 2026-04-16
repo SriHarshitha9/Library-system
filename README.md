@@ -138,7 +138,7 @@ Library-Management-System/
 ##  Author
 
 Name: Sri Harshitha Gullapalli
-Department: Computer Science / AIML  
+Department: Computer Science ( AIML )  
 Project Type: Mini Project / Academic Project
 
 ---
