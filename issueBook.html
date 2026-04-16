@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+  <title>Issue Book – LMS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
-<body onload="setDates()">
+<body>
+
+<!-- REQ 4: Chart link on all pages -->
+<div class="nav">
+  <a href="javascript:history.back()">← Back</a>
+  <a href="flowchart.html" class="chart-link">📊 View Flowchart</a>
+</div>
 
 <div class="container">
-<h2>Issue Book</h2>
+  <h2>Issue Book</h2>
 
-<input type="text" id="book" placeholder="Book Name">
-<input type="text" value="Auto Author" readonly>
+  <!-- NEW: Book dropdown -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">
+    Select Book *
+  </label>
 
-<input type="date" id="issueDate">
-<input type="date" id="returnDate">
+  <select id="bookSelect" onchange="fillBookDetails()" style="width:100%;padding:10px;margin-top:5px">
+    <option value="">-- Select Book --</option>
+  </select>
 
-<button onclick="validateIssue()">Issue</button>
+  <!-- Auto-filled fields -->
+  <input id="book" placeholder="Enter Book Name *">
+  <input id="author" placeholder="Enter Author *">
+  <!-- Issue Date -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">
+    Issue Date *
+  </label>
+  <input type="date" id="issueDate" >
+
+  <!-- Return Date -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">
+    Return Date * (max 15 days)
+  </label>
+  <input type="date" id="returnDate">
+
+  <!-- Remarks -->
+  <label style="display:block;font-size:13px;color:#555;margin-top:8px">
+    Remarks (optional)
+  </label>
+  <textarea id="remarks" placeholder="Any remarks..." rows="3" style="resize:vertical"></textarea>
+
+  <div id="msg"></div>
+
+  <button onclick="validateIssue()">Issue Book</button>
 </div>
+
+<script>
+  setDates();
+  loadBooksToDropdown();   //  NEW FIX
+  loadIssueData();
+</script>
 
 </body>
 </html>
