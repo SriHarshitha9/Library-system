@@ -58,20 +58,17 @@ The main objective of this project is to digitize basic library operations and p
 
 ---
 
-####  Project Structure
-
 Library-Management-System/
 │
 ├── addBook.html
 ├── addMembership.html
 ├── dashboard.html
 ├── finePay.html
+├── flowchart.html
 ├── issueBook.html
 ├── login.html
-├── maintenance.html
 ├── reports.html
 ├── returnBook.html
-├── transactions.html
 ├── updateBook.html
 ├── updateMembership.html
 ├── userManagement.html
